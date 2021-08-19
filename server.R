@@ -31,7 +31,6 @@ shinyServer(function(input, output) {
             data = df,
             x = ~artist,
             y = ~ plays,
-            name = "Adapted to expected 1 in 100 event",
             type = "bar",
             hoverinfo = "text",
             hovertext = paste0("Artist: ", df$artist, "<br>Album: ", df$album, "<br>Year: ", df$year, "<br>Album Plays: ", df$plays, "<br> Last Played: ", df$last_played)
@@ -45,12 +44,6 @@ shinyServer(function(input, output) {
                 yaxis = list(
                     title = "Total Album Plays",
                     showgrid = FALSE
-                ),
-                legend = list(
-                    orientation = "h",
-                    x = 0.5,
-                    y = -0.3,
-                    xanchor = "center"
                 )
             )
     })
@@ -62,7 +55,6 @@ shinyServer(function(input, output) {
             data = df,
             x = ~letter,
             y = ~ plays,
-            name = "Adapted to expected 1 in 100 event",
             type = "bar",
             hoverinfo = "text",
             hovertext = paste0("Artist: ", df$artist, "<br>Album: ", df$album, "<br>Year: ", df$year, "<br>Album Plays: ", df$plays, "<br> Last Played: ", df$last_played)
@@ -76,12 +68,6 @@ shinyServer(function(input, output) {
                 yaxis = list(
                     title = "Total Album Plays",
                     showgrid = FALSE
-                ),
-                legend = list(
-                    orientation = "h",
-                    x = 0.5,
-                    y = -0.3,
-                    xanchor = "center"
                 )
             )
     })
@@ -93,7 +79,6 @@ shinyServer(function(input, output) {
             data = df,
             x = ~year,
             y = ~ plays,
-            name = "Adapted to expected 1 in 100 event",
             type = "bar",
             hoverinfo = "text",
             hovertext = paste0("Artist: ", df$artist, "<br>Album: ", df$album, "<br>Year: ", df$year, "<br>Album Plays: ", df$plays, "<br> Last Played: ", df$last_played)
@@ -107,12 +92,6 @@ shinyServer(function(input, output) {
                 yaxis = list(
                     title = "Total Album Plays",
                     showgrid = FALSE
-                ),
-                legend = list(
-                    orientation = "h",
-                    x = 0.5,
-                    y = -0.3,
-                    xanchor = "center"
                 )
             )
     })
@@ -124,7 +103,6 @@ shinyServer(function(input, output) {
             data = df,
             x = ~country,
             y = ~ plays,
-            name = "Adapted to expected 1 in 100 event",
             type = "bar",
             hoverinfo = "text",
             hovertext = paste0("Artist: ", df$artist, "<br>Album: ", df$album, "<br>Year: ", df$year, "<br>Album Plays: ", df$plays, "<br> Last Played: ", df$last_played)
@@ -138,12 +116,6 @@ shinyServer(function(input, output) {
                 yaxis = list(
                     title = "Total Album Plays",
                     showgrid = FALSE
-                ),
-                legend = list(
-                    orientation = "h",
-                    x = 0.5,
-                    y = -0.3,
-                    xanchor = "center"
                 )
             )
     })
