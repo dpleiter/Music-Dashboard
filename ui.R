@@ -1,33 +1,64 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
-library(shiny)
-
-# Define UI for application that draws a histogram
-shinyUI(fluidPage(
-
-    # Application title
-    titlePanel("Old Faithful Geyser Data"),
-
-    # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
+shinyUI(
+    fluidPage(
+        title = "Music Dashboard",
+        
+        # CSS
+        tags$head(
+            tags$link(rel = "stylesheet", type = "text/css", href = "main.css")
         ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-            plotOutput("distPlot")
+        
+        fluidRow(
+            div(
+                class = "title-panel-outside",
+                div(
+                    class = "title-panel-inside",
+                    "Dylan Pleiter's Music Dashboard"
+                )
+            )
+        ),
+        fluidRow(
+            column(
+                3,
+                id = "sidebar",
+                HTML("<h4><b>Dashboard Filters</b></h4>"),
+                h5("View"),
+                selectInput(
+                    "view",
+                    NULL,
+                    choices = c(
+                        "Artist",
+                        "First Letter",
+                        "Year",
+                        "Country"
+                    ),
+                    width = "100%"
+                ),
+                hr(),
+                h5("First Letter"),
+                selectInput(
+                    "first_letter_filter",
+                    NULL,
+                    choices = c("(ALL)", str_sort(unique(album_listens$letter))),
+                    width = "100%"
+                ),
+                h5("Year"),
+                selectInput(
+                    "year_filter",
+                    NULL,
+                    choices = c("(ALL)", str_sort(unique(album_listens$year))),
+                    width = "100%"
+                ),
+                h5("Country"),
+                selectInput(
+                    "country_filter",
+                    NULL,
+                    choices = c("(ALL)", str_sort(unique(album_listens$country))),
+                    width = "100%"
+                )
+            ),
+            column(
+                9,
+                plotlyOutput("main_chart", height = "800px")
+            )
         )
-    )
-))
+    ))

@@ -1,0 +1,25 @@
+body {
+    font-size: 100%;
+    background-color: white;
+}
+
+.title-panel-outside {
+    height: 50px;
+    background-color: #088F8F;
+    color: white;
+    position: relative;
+}
+
+.title-panel-inside {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 26px;
+    color: white;
+    padding-left: 15px;
+}
+
+#sidebar {
+    background-color: #E8E8E8;
+}
